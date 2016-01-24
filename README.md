@@ -5,10 +5,10 @@ to build deep neural network for
 Kaggle 2nd Annual Data Science Bowl competition. This neural net achieves
 ~0.0359 CRPS score on the validation set.
 
-Please note that hyper-parameters of this network were chosen "ad-hoc", which means
+Please note that hyper-parameters were chosen "ad-hoc", which means that
 there is a lot of space for improving the score. Also, with Keras library,
 it is very easy to experiment with various architectures and
-hyper-parameters, so this tutorial could be a good starter point for
+hyper-parameters, so this tutorial could be a good starting point for
 such experimentation.
 
 ---
