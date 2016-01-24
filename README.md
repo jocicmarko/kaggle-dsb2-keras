@@ -109,23 +109,23 @@ Also, the tree of ```data``` dir must be like:
       ---- …
 ```
 
-1. Now run ```python data.py```.
+* Now run ```python data.py```.
 
-Running this script will create training and validation data, resize it to 64 x 64 and save it in *.npy* files.
+Running this script will create training and validation data, resize it to 64 x 64 and save to *.npy* files.
 
 ### Define the model
 
-2. Check out ```get_model()``` in ```model.py``` to modify the model, optimizer and loss function.
+* Check out ```get_model()``` in ```model.py``` to modify the model, optimizer and loss function.
 
 ### Train the models
 
-3. Run ```python train.py``` to train the models.
+* Run ```python train.py``` to train the models.
 
 Check out ```train()``` to modify the number of iterations (epochs), batch size, etc.
 
 ### Generate submission
 
-4. Run ```python submission.py``` to generate the submission file ```submission.csv``` for the trained model.
+* Run ```python submission.py``` to generate the submission file ```submission.csv``` for the trained model.
 
 Check out function ```submission()``` for details. In this example, weights from best iteration
 (lowest val. loss function value) are loaded and used.
