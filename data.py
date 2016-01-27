@@ -23,7 +23,7 @@ def crop_resize(img):
     xx = int((img.shape[1] - short_edge) / 2)
     crop_img = img[yy: yy + short_edge, xx: xx + short_edge]
     img = crop_img
-    img = imresize(img, img_shape, )
+    img = imresize(img, img_shape)
     return img
 
 
@@ -58,7 +58,8 @@ def load_images(from_dir, verbose=True):
                     continue
 
                 image = dicom.read_file(image_path)
-                image = image.pixel_array
+                image = image.pixel_array.astype(float)
+                image /= np.max(image)  # scale to [0,1]
                 if img_resize:
                     image = crop_resize(image)
 

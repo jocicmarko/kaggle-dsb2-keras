@@ -45,7 +45,8 @@ validation set when submitting the result on Kaggle, but it should be somewhat s
 
 Before the training, the images are denoised with TV (total variational) filter, which
 smooths the image but preserves edges (this pre-processing takes 5-10 minutes).
-During the training the images are augmented by random rotations in range \[-15, 15\] degrees.
+During the training the images are augmented by random rotations in range \[-15, 15\] degrees and
+by random horizontal/vertical shifts in range \[-10%, 10%\] (of image width/height).
 
 During the training, values of loss function on test split might oscillate a bit,
 but in overall they should drop. The same goes for CRPS estimate on test split.
@@ -53,8 +54,8 @@ but in overall they should drop. The same goes for CRPS estimate on test split.
 Also, during the training, weights for last and best iteration (lowest val. loss) are saved in HDF5 files,
 so that they can be loaded later for generating a submission.
 
-On GeForce GTX 770 GPU, time needed for each epoch is ~100 seconds, and whole iteration
-(training both models + CRPS evaluation) takes around 5 minutes.
+On GeForce GTX 770 GPU, time needed for whole iteration
+(augmenting data + training both models + evaluating CRPS) takes around 3 minutes.
 
 ### Note on CDF
 
