@@ -61,7 +61,7 @@ def train():
     # split to training and test
     X_train, y_train, X_test, y_test = split_data(X, y, split_ratio=0.2)
 
-    nb_iter = 150
+    nb_iter = 200
     epochs_per_iter = 1
     batch_size = 32
     calc_crps = 1  # calculate CRPS every n-th iteration (set to 0 if CRPS estimation is not needed)
