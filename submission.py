@@ -80,7 +80,7 @@ def submission():
     # write to submission file
     print('Writing submission to file...')
     fi = csv.reader(open('data/sample_submission_validate.csv'))
-    f = open('submission.csv', "w+")
+    f = open('submission.csv', 'w')
     fo = csv.writer(f, lineterminator='\n')
     fo.writerow(fi.next())
     for line in fi:

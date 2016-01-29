@@ -135,7 +135,7 @@ def train():
 
         if val_loss_diastole < min_val_loss_diastole:
             min_val_loss_diastole = val_loss_diastole
-            model_systole.save_weights('weights_diastole_best.hdf5', overwrite=True)
+            model_diastole.save_weights('weights_diastole_best.hdf5', overwrite=True)
 
         # save best (lowest) val losses in file (to be later used for generating submission)
         with open('val_loss.txt', mode='w+') as f:
