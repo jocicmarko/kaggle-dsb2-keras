@@ -79,7 +79,7 @@ This example depends on the following libraries:
 * pydicom
 * scikit-image
 * Theano and/or Tensorflow
-* Keras
+* Keras (0.3.1)
 
 Also, this code should be compatible with Python versions 2.7-3.5.
 
