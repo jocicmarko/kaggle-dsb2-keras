@@ -8,6 +8,13 @@ from keras.regularizers import l2
 from keras import backend as K
 
 
+def root_mean_squared_error(y_true, y_pred):
+    """
+    RMSE loss function
+    """
+    return K.sqrt(K.mean(K.square(y_pred - y_true), axis=-1))
+
+
 def center_normalize(x):
     """
     Custom activation for online sample-wise center and std. normalization
@@ -49,5 +56,5 @@ def get_model():
     model.add(Dense(1))
 
     adam = Adam(lr=0.0001)
-    model.compile(optimizer=adam, loss='rmse')
+    model.compile(optimizer=adam, loss=root_mean_squared_error)
     return model
